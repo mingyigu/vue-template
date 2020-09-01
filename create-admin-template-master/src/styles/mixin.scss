@@ -1,0 +1,54 @@
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+@mixin flexer(
+  $display: flex,
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $flex: none
+) {
+  // flex布局基础
+  display: $flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex: $flex;
+}
+
+@mixin position(
+  $pos: static,
+  $t: auto,
+  $l: auto,
+  $b: auto,
+  $r: auto,
+  $z: auto
+) {
+  // 定位布局基础
+  position: $pos;
+  top: $t;
+  left: $l;
+  bottom: $b;
+  right: $r;
+  z-index: $z;
+}

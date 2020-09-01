@@ -9,7 +9,7 @@
 > 工具插件说明
 
 - eslint、Prettier-Code formatter、vetur 主要是针对代码格式方面的控制；
-- koroFileHeader （可以不用此插件） 主要是对头部注释的添加，在新建、修改、保存的时候会自动更新头部注释，安装完毕后需要修改配置，将 Author、LastEditors 修改成自己的英文名即可，如下：
+- koroFileHeader 主要是对头部注释的添加，在新建、修改、保存的时候会自动更新头部注释，安装完毕后需要修改配置，将 Author、LastEditors 修改成自己的英文名即可，如下：
 
 ```javascript
 "fileheader.customMade": {
@@ -56,10 +56,6 @@
 │   ├── utils                  # 全局公用方法
 │   ├── vendor                 # 公用vendor
 │   ├── views                  # views 所有页面
-│         └── home             # 首页页面
-│               ├── components # 首页组件的子组件
-│               ├── style.scss # 首页页面的样式
-│               └── home.vue   # 首页页面的整体结构
 │   ├── App.vue                # 入口页面
 │   ├── main.js                # 入口文件 加载组件 初始化等
 │   └── permission.js          # 权限管理
@@ -241,21 +237,14 @@ meta : {
 }
 
 ```
-## 通用表格组件
-### 路径：src/components/CommonTable
-### 使用方法：
-直接在页面里面引入组件即可
-### 参数和方法说明：
-![参数](./tests/table1.png)
-![方法](./tests/table2.png)
 
 ## Git 分支命名规范
 
 1. 每次新需求都需要基于 master 分支进行开发；
-2. 在发布上线之前需要先提交合并至 master 分支，然后从 master 分支进行发布，禁止直接修改 master 分支或用 dev 分支发布，master 分支只用于合并和发布；
-3. 所有的开发都是基于dev分支进行开发，禁止私自新建新的分支；
-4. （很少使用，特殊情况下会使用）修复 bug 分支命名规范：fix-基分支-bug 名-日期, 如：fix-master-login-20191025 或者 fix-sales-login-20191025；
-5. 每次更新需要根据实际场景写 commit，需保持提交的代码与描述的一致；
+2. 在发布上线之前需要先合并至 master 分支，然后从 master 分支进行发布，禁止直接修改 master 分支或用 dev 分支发布，master 分支只用于合并和发布；
+3. 新需求分支命名规范：基分支-需求名(功能名)-日期，如：master-sales-20191025
+4. 修复 bug 分支命名规范：fix-基分支-bug 名-日期, 如：fix-master-login-20191025 或者 fix-sales-login-20191025
+5. 每次更新需要根据实际场景写 commit
 
 ## 构建
 
@@ -282,10 +271,10 @@ npm start
 
 ```bash
 # 构建测试环境
-npm run build:test
+npm run build:stage
 
 # 构建生产环境
-npm run build:pro
+npm run build:prod
 ```
 
 ## 其它
